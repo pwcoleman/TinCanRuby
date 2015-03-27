@@ -1,0 +1,10 @@
+{
+  "extensions" : {
+    "http://id.tincanapi.com/extension/powered-by" : {
+      "name" : "Tin Can Engine",
+      "homePage" : "http://tincanapi.com/lrs-lms/lrs-for-lmss-home/",
+      "version" : "2012.1.0.8c644"
+    }
+  },
+  "version" : [ "0.9", "0.95", "1.0.1" ]
+}
