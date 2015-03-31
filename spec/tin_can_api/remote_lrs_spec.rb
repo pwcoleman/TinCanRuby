@@ -1,7 +1,7 @@
 # encoding: utf-8
 require 'spec_helper'
 
-describe TinCanApi::Client do
+describe TinCanApi::RemoteLRS do
   include Helpers
 
   describe 'about' do
@@ -13,13 +13,13 @@ describe TinCanApi::Client do
               body: fixture('about.json'),
               headers: {})
 
-      client = TinCanApi::Client.new do |c|
+      remote_lrs = TinCanApi::RemoteLRS.new do |c|
         c.end_point = 'http://www.example.com'
         c.user_name = 'user'
         c.password = 'password'
       end
 
-      response = client.about
+      response = remote_lrs.about
       expect(response.success).to be(true)
     end
 
@@ -31,13 +31,13 @@ describe TinCanApi::Client do
               body: fixture('about.json'),
               headers: {})
 
-      client = TinCanApi::Client.new do |c|
+      remote_lrs = TinCanApi::RemoteLRS.new do |c|
         c.end_point = 'http://www.example.com'
         c.user_name = 'user'
         c.password = 'password'
       end
 
-      response = client.about
+      response = remote_lrs.about
       expect(response.content).to be_a(TinCanApi::About)
     end
   end

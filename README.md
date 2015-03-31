@@ -28,9 +28,9 @@ Or install it yourself as:
 
 ## Usage
 
-Create a client using basic auth
+Create a remote LRS using basic auth
 ```ruby
-client = TinCanApi::Client.new do |c|
+remote_lrs = TinCanApi::RemoteLRS.new do |c|
   c.end_point = 'https://some.endpoint.com'
   c.user_name = 'user'
   c.password = 'password'
@@ -40,8 +40,8 @@ end
 Connect to the 'about' endpoint to get version information
 
 ```ruby
-# use the client from above
-response = client.about
+# use the remote LRS from above
+response = remote_lrs.about
 # check if it is successful
 if response.success
     # access the TinCanApi::About instance
@@ -62,12 +62,12 @@ statement = TinCanApi::Statement.new do |s|
   s.object = activity
 end
 
-response = client.save_statement(statement)
+response = remote_lrs.save_statement(statement)
 if response.success
   # access the statement
   response.content
 end
 ```
 
-For more API calls check out the TinCanApi::Client class
+For more API calls check out the TinCanApi::RemoteLRS class
 
