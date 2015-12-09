@@ -11,8 +11,8 @@ module TinCanApi
       if json
         attributes = JSON.parse(json)
         self.score = TinCanApi::Score.new(json: attributes['score'].to_json) if attributes['score']
-        self.success = attributes['success'] if attributes['success']
-        self.completion = attributes['completion'] if attributes['completion']
+        self.success = attributes['success'] unless attributes['success'].nil?
+        self.completion = attributes['completion'] unless attributes['completion'].nil?
         self.duration = Duration.new(attributes['duration']) if attributes['duration']
         self.response = attributes['response'] if attributes['response']
         self.extensions = attributes['extensions'] if attributes['extensions']
@@ -33,8 +33,8 @@ module TinCanApi
     def serialize(version)
       node = {}
       node['score'] = score.serialize(version) if score
-      node['success'] = success if success
-      node['completion'] = completion if completion
+      node['success'] = success unless success.nil?
+      node['completion'] = completion unless completion.nil?
       node['duration'] = duration.iso8601 if duration
       node['response'] = response if response
       node['extensions'] = extensions if extensions
