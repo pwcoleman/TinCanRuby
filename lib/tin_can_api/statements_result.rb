@@ -9,7 +9,7 @@ module TinCanApi
       json = options.fetch(:json, nil)
       self.statements = []
       if json
-        self.statements = json['statements'].map {|statement| Statement.new(json: statement)} if json['statements']
+        self.statements = json['statements'].map {|statement| Statement.new(json: statement.to_json)} if json['statements']
         self.more_url = json['more'] if json['more']
       end
     end
