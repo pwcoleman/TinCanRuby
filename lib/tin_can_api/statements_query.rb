@@ -7,7 +7,7 @@ module TinCanApi
     attr_accessor :stored_since, :stored_until, :limit, :format, :ascending
 
     def initialize(&block)
-      self.version = TCAPIVersion::V101
+      @version = TCAPIVersion::V101
       if block_given?
         block[self]
       end
@@ -23,7 +23,7 @@ module TinCanApi
 
     def parameter_map
       params = {}
-      params['agent'] = agent.serialize(version) if agent
+      params['agent'] = agent.serialize(version).to_json if agent
       params['verb'] = verb_id.to_s if verb_id
       params['activity'] = activity_id.to_s if activity_id
       params['registration'] = registration if registration
