@@ -26,6 +26,7 @@ module TinCanApi
           lrs.success = true
         else
           lrs.success = false
+          lrs.error_message = JSON.parse(response.body)['message']
         end
       end
     end
@@ -56,6 +57,7 @@ module TinCanApi
           lrs.success = true
         else
           lrs.success = false
+          lrs.error_message = JSON.parse(response.body)['message']
         end
       end
     end
@@ -83,6 +85,7 @@ module TinCanApi
           lrs.success = true
         else
           lrs.success = false
+          lrs.error_message = JSON.parse(response.body)['message']
         end
       end
     end
@@ -117,6 +120,7 @@ module TinCanApi
           lrs.content = StatementsResult.new(json: JSON.parse(response.body))
         else
           lrs.success = false
+          lrs.error_message = JSON.parse(response.body)['message']
         end
       end
     end
@@ -135,6 +139,7 @@ module TinCanApi
           lrs.content = StatementsResult.new(json: JSON.parse(response.body))
         else
           lrs.success = false
+          lrs.error_message = JSON.parse(response.body)['message']
         end
       end
     end
@@ -335,6 +340,7 @@ module TinCanApi
           lrs.success = true
         else
           lrs.success = false
+          lrs.error_message = JSON.parse(response.body)['message']
         end
       end
     end
@@ -353,6 +359,7 @@ module TinCanApi
           lrs.success = true
         else
           lrs.success = false
+          lrs.error_message = JSON.parse(response.body)['message']
         end
       end
     end
@@ -368,6 +375,7 @@ module TinCanApi
           lrs.success = true
         else
           lrs.success = false
+          lrs.error_message = JSON.parse(response.body)['message']
         end
       end
     end
@@ -387,6 +395,7 @@ module TinCanApi
           lrs.success = true
         else
           lrs.success = false
+          lrs.error_message = JSON.parse(response.body)['message']
         end
       end
     end
