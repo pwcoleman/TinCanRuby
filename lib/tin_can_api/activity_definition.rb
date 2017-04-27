@@ -29,35 +29,35 @@ module TinCanApi
         if attributes['choices']
           self.choices = []
           attributes['choices'].each do |choice|
-            choices << InteractionComponent.new(choice.to_json)
+            choices << InteractionComponent.new(json: choice.to_json)
           end
         end
 
         if attributes['scale']
           self.scale = []
           attributes['scale'].each do |element|
-            scale << InteractionComponent.new(element.to_json)
+            scale << InteractionComponent.new(json: element.to_json)
           end
         end
 
         if attributes['source']
           self.source = []
           attributes['source'].each do |element|
-            source << InteractionComponent.new(element.to_json)
+            source << InteractionComponent.new(json: element.to_json)
           end
         end
 
         if attributes['target']
           self.target = []
           attributes['target'].each do |element|
-            target << InteractionComponent.new(element.to_json)
+            target << InteractionComponent.new(json: element.to_json)
           end
         end
 
         if attributes['steps']
           self.steps = []
           attributes['steps'].each do |element|
-            steps << InteractionComponent.new(element.to_json)
+            steps << InteractionComponent.new(json: element.to_json)
           end
         end
 
