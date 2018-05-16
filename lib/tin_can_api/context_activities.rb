@@ -53,7 +53,7 @@ module TinCanApi
     end
 
     def parent=(value)
-      if value.is_a(Array)
+      if value.is_a?(Array)
         @parent = value
       else
         @parent = [value]
@@ -61,7 +61,7 @@ module TinCanApi
     end
 
     def grouping=(value)
-      if value.is_a(Array)
+      if value.is_a?(Array)
         @grouping = value
       else
         @grouping = [value]
@@ -69,7 +69,7 @@ module TinCanApi
     end
 
     def other=(value)
-      if value.is_a(Array)
+      if value.is_a?(Array)
         @other = value
       else
         @other = [value]
@@ -77,7 +77,7 @@ module TinCanApi
     end
 
     def category=(value)
-      if value.is_a(Array)
+      if value.is_a?(Array)
         @category = value
       else
         @category = [value]
