@@ -3,7 +3,7 @@ module TinCanApi
   # ContextActivities Model class
   class ContextActivities
 
-    attr_accessor :parent, :grouping, :other, :category
+    attr_reader :parent, :grouping, :other, :category
 
     def initialize(options={}, &block)
       json = options.fetch(:json, nil)
@@ -49,6 +49,38 @@ module TinCanApi
         if block_given?
           block[self]
         end
+      end
+    end
+
+    def parent=(value)
+      if value.is_a?(Array)
+        @parent = value
+      else
+        @parent = [value]
+      end
+    end
+
+    def grouping=(value)
+      if value.is_a?(Array)
+        @grouping = value
+      else
+        @grouping = [value]
+      end
+    end
+
+    def other=(value)
+      if value.is_a?(Array)
+        @other = value
+      else
+        @other = [value]
+      end
+    end
+
+    def category=(value)
+      if value.is_a?(Array)
+        @category = value
+      else
+        @category = [value]
       end
     end
 

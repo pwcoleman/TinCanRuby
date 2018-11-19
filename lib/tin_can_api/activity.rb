@@ -34,6 +34,7 @@ module TinCanApi
       node = {}
       node['id'] = id.to_s if id
       node['definition'] = definition.serialize(version) if definition
+      node['objectType'] = object_type if object_type
       node
     end
 
