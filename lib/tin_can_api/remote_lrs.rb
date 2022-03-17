@@ -38,13 +38,13 @@ module TinCanApi
           req.url("#{path}statements")
           req.headers['Content-Type'] = 'application/json'
           req.params.merge!({'statementId' => statement.id})
-          req.body = statement.serialize(latest_version).to_json
+          req.body = statement.serialize(version).to_json
         end
       else
         response = connection.post do |req|
           req.url("#{path}statements")
           req.headers['Content-Type'] = 'application/json'
-          req.body = statement.serialize(latest_version).to_json
+          req.body = statement.serialize(version).to_json
         end
       end
       LrsResponse.new do |lrs|
